@@ -7,16 +7,21 @@
     <style>
         /* Style for the slideshow container */
         .slideshow-container {
-            max-width: 100%;
+            max-width: 600px; /* Adjust width as needed */
             position: relative;
             margin: auto;
             overflow: hidden;
+            border: 2px solid #ddd; /* Optional: Adds a border around the slideshow */
+            border-radius: 8px; /* Optional: Rounds the corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds shadow */
         }
 
-        /* Hide all images by default */
+        /* Set all slides to the same smaller size */
         .slide {
             display: none;
             width: 100%;
+            height: auto; /* Maintain aspect ratio */
+            max-height: 400px; /* Set max height for consistency */
         }
 
         /* Animation for fading */
@@ -36,16 +41,19 @@
             position: absolute;
             top: 50%;
             width: auto;
-            padding: 16px;
+            padding: 8px;
             color: white;
             font-weight: bold;
+            font-size: 18px;
             transition: 0.6s ease;
             user-select: none;
             transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+            border-radius: 5px;
         }
 
-        .prev { left: 0; }
-        .next { right: 0; }
+        .prev { left: 8px; }
+        .next { right: 8px; }
 
         .prev:hover, .next:hover { background-color: rgba(0, 0, 0, 0.8); }
     </style>
