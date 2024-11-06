@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUB - Slideshow</title>
+    <style>
+        /* Style for the slideshow container */
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        /* Hide all images by default */
+        .slide {
+            display: none;
+            width: 100%;
+        }
+
+        /* Animation for fading */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from { opacity: 0.4; }
+            to { opacity: 1; }
+        }
+
+        /* Navigation buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            transition: 0.6s ease;
+            user-select: none;
+            transform: translateY(-50%);
+        }
+
+        .prev { left: 0; }
+        .next { right: 0; }
+
+        .prev:hover, .next:hover { background-color: rgba(0, 0, 0, 0.8); }
+    </style>
+</head>
+<body>
+
+<div class="slideshow-container">
+    <!-- Each image slide -->
+    <img class="slide fade" src="assets/images/hub-slide.png" alt="Slide 1">
+    <img class="slide fade" src="assets/images/hub-slide1.png" alt="Slide 2">
+    <img class="slide fade" src="assets/images/hub-slide2.png" alt="Slide 3">
+    <img class="slide fade" src="assets/images/hub-slide3.png" alt="Slide 4">
+    <img class="slide fade" src="assets/images/hub-slide4.png" alt="Slide 5">
+    <img class="slide fade" src="assets/images/hub-slide5.png" alt="Slide 6">
+    <img class="slide fade" src="assets/images/hub-slide6.png" alt="Slide 7">
+    <img class="slide fade" src="assets/images/hub-slide7.png" alt="Slide 8">
+    <img class="slide fade" src="assets/images/hub-slide8.png" alt="Slide 9">
+    <img class="slide fade" src="assets/images/hub-slide9.png" alt="Slide 10">
+
+    <!-- Navigation buttons -->
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+</div>
+
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let slides = document.getElementsByClassName("slide");
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1 }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+
+    function changeSlide(n) {
+        slideIndex += n;
+        if (slideIndex > slides.length) { slideIndex = 1 }
+        if (slideIndex < 1) { slideIndex = slides.length }
+        showSlides();
+    }
+</script>
+
+</body>
+</html>
