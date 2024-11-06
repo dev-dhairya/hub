@@ -1,7 +1,7 @@
 # hub
-this is the Example of One of my Services.
+View my Services Example.
 
-View my Portfolio at __https://devdhairya.carrd.co__
+View my Portfolio at https://devdhairya.carrd.co
 
 Thank you.
 
